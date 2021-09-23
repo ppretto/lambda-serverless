@@ -1,0 +1,29 @@
+plugins {
+	id 'java'
+	id 'idea'
+	id 'application'
+	id 'io.freefair.lombok' version '5.0.0'
+}
+
+group = 'com.lambda'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'com.amazonaws:aws-lambda-java-core:1.1.0'
+	implementation 'com.amazonaws:aws-lambda-java-events:2.2.2'
+	implementation group: 'com.amazonaws', name: 'aws-java-sdk-sqs', version: '1.9.4'
+
+}
+
+test {
+	useJUnitPlatform()
+}
